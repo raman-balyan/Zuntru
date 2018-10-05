@@ -1,14 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template, request, session, flash, redirect, url_for, g
 
 app = Flask(__name__)
 
 
 @app.route("/")
-@app.route("/about")
 def index():
-    return "We are revamping. Will be back soon!"
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
